@@ -1,0 +1,3 @@
+Asennetaan curl:
+
+    root@42cbfe2205e6:/# apt update && apt install --no-install-recommends -y curl

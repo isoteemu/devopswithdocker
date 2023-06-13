@@ -1,0 +1,1 @@
+(base) teemu@Teemus-Delight 1-8 % touch text.log && docker run -it -v $PWD/text.log:/usr/src/app/text.log --rm devopsdockeruh/simple-web-service

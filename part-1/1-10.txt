@@ -1,0 +1,1 @@
+(base) teemu@Teemus-Delight 1-8 % docker run -it --rm -p8080:8080 web-server
