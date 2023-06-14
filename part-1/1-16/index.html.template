@@ -1,0 +1,16 @@
+<html>
+    <head>  
+        <title>DevOpsWithDocker</title>
+    </head>
+    <body>
+        <h1>DevOpsWithDocker 1-16</h1>
+        <p>
+            Here is fortune generated in the <a href="https://github.com/isoteemu/devopswithdocker/tree/main/part-1/1-16/Dockerfile">build process</a>:
+        </p>
+        <pre>$FORTUNE</pre>
+        <p>
+            Best regards,<br>
+            -- IsoTeemu
+        </p>
+    </body>
+</html>

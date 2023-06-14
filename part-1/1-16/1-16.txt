@@ -1,0 +1,7 @@
+1. Set up an azure web app free tier
+2. Adapted the 1-15 container for this task
+3. Created a repository in docker hub
+4. Build and tagged image: `docker build -t isoteemu/devopswithdocker:1-16 . && docker push isoteemu/devopswithdocker:1-16`
+5. Changed azure configuration to use image from docker hub
+
+App is running <https://1-16.azurewebsites.net/>
