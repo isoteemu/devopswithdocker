@@ -1,0 +1,41 @@
+# Exercise 2.6
+# Let us continue with the example app that we worked with in Exercise 2.4.
+# Now you should add database to example backend.
+# Use a Postgres database to save messages. For now there is no need to configure a volume since the official postgres image sets a default volume for us. Use the Postgres image documentation to your advantage when configuring: https://hub.docker.com/_/postgres/. Especially part Environment Variables is a valuable one.
+# The backend README should have all the information needed to connect.
+# There is again a button (and a form!) in the frontend that you can use to ensure your configuration is done right.
+# Submit the docker-compose.yml
+#     TIP: When configuring the database, you might need to destroy the automatically created volumes. Use command docker volume prune, docker volume ls and docker volume rm to remove unused volumes when testing. Make sure to remove containers that depend on them beforehand.
+#     restart: unless-stopped can help if the Postgres takes a while to get ready
+# Backend, frontend, redis and a database
+
+version: '3.8'
+
+services:
+  example-backend:
+    image: example-backend
+    ports:
+      - 8080:8080
+    environment:
+      - FRONT_URL=http://localhost:5000
+      - POSTGRES_HOST=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DATABASE=backend
+
+  example-frontend:
+    image: example-frontend
+    ports:
+      - 5000:5000
+    environment:
+      - API_URL=http://localhost:8080
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=backend
+
+    # volumes:
+      #- postgres:/var/lib/postgresql/data

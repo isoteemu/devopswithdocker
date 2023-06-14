@@ -1,0 +1,29 @@
+# Exercise 2.4
+# In this exercise you should expand the configuration done in Exercise 2.3 and set up the example backend to use the key-value database Redis.
+# Redis is quite often used as a cache to store data so that future requests for data can be served faster.
+# The backend uses a slow API to fetch some information. You can test the slow API by requesting /ping?redis=true with curl. The frontend app has a button to test this.
+# So you should improve the performance of the app and configure a Redis container to cache information for the backend. The documentation of the Redis image might contain some useful info.
+# The backend README should have all the information that is needed for configuring the backend.
+# When you've correctly configured the button will turn green.
+# Submit the docker-compose.yml
+
+version: '3.8'
+
+services:
+  example-backend:
+    image: example-backend
+    ports:
+      - 8080:8080
+    environment:
+      - FRONT_URL=http://localhost:5000
+      - REDIS_HOST=redis
+
+  example-frontend:
+    image: example-frontend
+    ports:
+      - 5000:5000
+    environment:
+      - API_URL=http://localhost:8080
+
+  redis:
+    image: redis
