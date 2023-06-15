@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    command: --label-enable
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+    restart: unless-stopped
+
+  3-1:
+    image: isoteemu/devopswithdocker:part3-1
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    ports:
+      - 8080:8080

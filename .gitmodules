@@ -8,3 +8,7 @@
 [submodule "2-5"]
 	path = part-2/2-5/material-applications
 	url = https://github.com/docker-hy/material-applications.git
+
+[submodule "express-app"]
+	path = part-3/express_app
+	url = git@github.com:isoteemu/devopswithdocker-material-applications.git
