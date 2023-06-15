@@ -1,0 +1,8 @@
+Workflow file:
+    https://github.com/isoteemu/devopswithdocker/blob/main/.github/workflows/deploy-to-webapp.yml
+
+Repository:
+    https://github.com/isoteemu/devopswithdocker/
+
+Deployment:
+    https://1-16.azurewebsites.net
