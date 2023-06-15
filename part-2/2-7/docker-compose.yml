@@ -1,13 +1,13 @@
-# Exercise 2.6
-# Let us continue with the example app that we worked with in Exercise 2.4.
-# Now you should add database to example backend.
-# Use a Postgres database to save messages. For now there is no need to configure a volume since the official postgres image sets a default volume for us. Use the Postgres image documentation to your advantage when configuring: https://hub.docker.com/_/postgres/. Especially part Environment Variables is a valuable one.
-# The backend README should have all the information needed to connect.
-# There is again a button (and a form!) in the frontend that you can use to ensure your configuration is done right.
+# Exercise 2.7
+# Postgres image uses a volume by default. Define manually a volume for the database in a convenient location such as in ./database so you should use now a bind mount. The image documentation may help you with the task.
+# After you have configured the bind mount volume:
+#     Save a few messages through the frontend
+#     Run docker compose down
+#     Run docker compose up and see that the messages are available after refreshing browser
+#     Run docker compose down and delete the volume folder manually
+#     Run docker compose up and the data should be gone
+#     TIP: To save you the trouble of testing all of those steps, just look into the folder before trying the steps. If it's empty after docker compose up then something is wrong.
 # Submit the docker-compose.yml
-#     TIP: When configuring the database, you might need to destroy the automatically created volumes. Use command docker volume prune, docker volume ls and docker volume rm to remove unused volumes when testing. Make sure to remove containers that depend on them beforehand.
-#     restart: unless-stopped can help if the Postgres takes a while to get ready
-# Backend, frontend, redis and a database
 
 version: '3.8'
 

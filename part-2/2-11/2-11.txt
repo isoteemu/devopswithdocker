@@ -1,0 +1,1 @@
+In our work we utilized containers to setup testing environment for our IoT platform. In docker-compose we defined the manangement software with all its necessary componenets - ie. database and such - and the management software then started new "devices" dynamically as containers. We ran into a bit of problems with docker network not supporting IGMP.

@@ -1,0 +1,17 @@
+FROM node:16
+
+WORKDIR /app
+
+ENV REACT_APP_BACKEND_URL=http://localhost/api
+
+RUN git clone --depth 1 https://github.com/docker-hy/material-applications.git && \
+    mv material-applications/example-frontend/* . && \
+    rm -rf material-applications
+# COPY material-applications/example-frontend .
+
+RUN npm install -g serve
+RUN npm install && npm run build
+
+EXPOSE 5000
+
+CMD serve -s -l 5000 build
