@@ -1,0 +1,9 @@
+Using alpine based image shrank the base image from 916Mb to 301Mb
+
+Base layer sizes in ubuntu:
+387 + 227 + 152 + 18.9 + 10.7 + 124
+
+In alpine:
+296 + 5
+
+This doesn't include the additional git an associated that were missing from alpine by default.

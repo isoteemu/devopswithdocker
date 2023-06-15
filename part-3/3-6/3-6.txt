@@ -1,0 +1,6 @@
+Frontend could be combined with node installs, saving:
+341 + 10 = 351Mb -> 351Mb, giving savings of none
+
+Not changing node modules rights to user gave savings of 186Mb
+
+For backend there ware no commands to combine. Not changing ownership of app folder to user gave savings of 18Mb.

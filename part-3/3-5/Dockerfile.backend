@@ -1,0 +1,18 @@
+FROM golang:1.16
+
+WORKDIR /app
+
+RUN git clone --depth 1 https://github.com/docker-hy/material-applications.git && \
+    mv material-applications/example-backend/* . && \
+    rm -rf material-applications
+
+RUN go build
+
+RUN useradd -m app && chown app /app
+USER app
+
+EXPOSE 8080
+
+ENV REQUEST_ORIGIN=http://localhost:5000
+
+CMD ./server

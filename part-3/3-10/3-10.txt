@@ -1,0 +1,2 @@
+- Changed base image to slim, and used devcontainer image as special multi-stage target.
+- Compiled bytecode as part of build process
